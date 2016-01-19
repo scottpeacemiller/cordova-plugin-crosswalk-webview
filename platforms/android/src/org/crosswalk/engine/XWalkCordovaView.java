@@ -82,7 +82,7 @@ public class XWalkCordovaView extends XWalkView implements CordovaWebViewEngine.
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        Boolean ret = parentEngine.client.onDispatchKeyEvent(event);
+        Boolean ret = parentEngine == null ? null : parentEngine.client.onDispatchKeyEvent(event);
         if (ret != null) {
             return ret.booleanValue();
         }
